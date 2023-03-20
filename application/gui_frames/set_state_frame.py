@@ -26,10 +26,10 @@ class set_state_frame(tkinter.Frame):
 
 
         self.title_label.grid(column=0, row=0, columnspan=2)
-        self.shoulder_base_label.grid(column=0, row=1, sticky="w")
-        self.shoulder_label.grid(column=0, row=2, sticky="w")
-        self.elbow_label.grid(column=0, row=3, sticky="w")
-        self.wrist_label.grid(column=0, row=4, sticky="w")
+        self.shoulder_base_label.grid(column=0, row=1, sticky="e")
+        self.shoulder_label.grid(column=0, row=2, sticky="e")
+        self.elbow_label.grid(column=0, row=3, sticky="e")
+        self.wrist_label.grid(column=0, row=4, sticky="e")
         self.shoulder_base_entry.grid(column=1, row=1)
         self.shoulder_entry.grid(column=1, row=2)
         self.elbow_entry.grid(column=1, row=3)

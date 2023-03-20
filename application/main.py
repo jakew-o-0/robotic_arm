@@ -1,5 +1,5 @@
 import tkinter
-from arm_sate import arm_state
+from arm_data import arm_state
 from gui_frames.state_frame import state_frame
 from gui_frames.set_state_frame import set_state_frame
 from gui_frames.serial_frame import serial_frame

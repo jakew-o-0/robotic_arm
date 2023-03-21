@@ -37,10 +37,10 @@ class arm_state:
             error_win(self.root, e)
 
 
-    def use_controller_input():
+    def use_controller_input(self):
         pass
 
-    def use_pattern():
+    def use_pattern(self):
         pass
 
 

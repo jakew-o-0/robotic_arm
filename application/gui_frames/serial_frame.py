@@ -13,21 +13,21 @@ class serial_frame(tkinter.Frame):
         self.connectivity_var = root.Arm_state.is_port_open
         
 
-        self.connectivity_label = tkinter.Label(self, text="Serial Connection: ", bg="grey")
+        self.connectivity_label = tkinter.Label(self, text="Connection: ", bg="grey")
         self.connectivity = tkinter.Label(self, textvariable=self.connectivity_var, bg="grey")
 
         self.port_label = tkinter.Label(self, text="port: ", bg="grey")
         self.baudrate_label = tkinter.Label(self, text="baudrate: ", bg="grey")
         self.timeout_label = tkinter.Label(self, text="timeout: ", bg="grey")
 
-        self.port_entry = tkinter.Entry(self, textvariable=self.port)
-        self.baudrate_entry = tkinter.Entry(self, textvariable=self.baudrate)
-        self.timeout_entry = tkinter.Entry(self, textvariable=self.timeout)
+        self.port_entry = tkinter.Entry(self, textvariable=self.port, width=15)
+        self.baudrate_entry = tkinter.Entry(self, textvariable=self.baudrate, width=15)
+        self.timeout_entry = tkinter.Entry(self, textvariable=self.timeout, width=15)
 
-        self.connect_button = tkinter.Button(self, text="connect", command=lambda:self.connect(root))
+        self.connect_button = tkinter.Button(self, text="connect", command=lambda: root.Arm_state.init_serial(self.baudrate.get(), self.port.get(), self.timeout.get()))
 
         self.connectivity_label.grid(column=0, row=0)
-        self.connectivity.grid(column=1, row=0)
+        self.connectivity.grid(column=1, row=0, sticky="w")
         self.connect_button.grid(column=0, row=5, columnspan=2)
         self.port_label.grid(column=0, row=2, sticky="w")
         self.port_entry.grid(column=1, row=2)
@@ -36,8 +36,6 @@ class serial_frame(tkinter.Frame):
         self.timeout_label.grid(column=0, row=4, sticky="w")
         self.timeout_entry.grid(column=1, row=4)
 
-    def connect(self, root):
-        root.Arm_state.init_serial(self.baudrate.get(), self.port.get(), self.timeout.get())
 
 
 if(__name__ ==  "__main__"):

@@ -1,5 +1,5 @@
 import tkinter
-from error_window import error_win
+from gui_toplevel_windows.error_window import error_win
 
 
 class set_state_frame(tkinter.Frame):

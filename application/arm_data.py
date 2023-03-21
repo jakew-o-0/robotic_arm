@@ -1,6 +1,6 @@
 import tkinter
 import serial
-from error_window import error_win
+from gui_toplevel_windows.error_window import error_win
 
 
 class arm_state:
@@ -35,6 +35,13 @@ class arm_state:
             self.is_port_open.set(str(self.serial_port.is_open))
         except Exception as e:
             error_win(self.root, e)
+
+
+    def use_controller_input():
+        pass
+
+    def use_pattern():
+        pass
 
 
 

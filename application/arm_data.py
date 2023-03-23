@@ -43,6 +43,19 @@ class arm_state:
     def use_pattern(self):
         pass
 
+    def send_data(self):
+        msg = 0xF100 & self.shoulder_base_iVar.get()
+        self.serial_port.write(msg)
+
+        msg = 0xF100 & self.shoulder_iVar.get()
+        self.serial_port.write(msg)
+        
+        msg = 0xF100 & self.elbow_iVar.get()
+        self.serial_port.write(msg)
+
+        msg = 0xF100 & self.wrist_iVar.get()
+        self.serial_port.write(msg)
+
 
 
 if(__name__ == "__main__"):

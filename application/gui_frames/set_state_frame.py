@@ -42,7 +42,8 @@ class set_state_frame(tkinter.Frame):
             root.Arm_state.shoulder_iVar.set(self.shoulder_iVar.get())
             root.Arm_state.elbow_iVar.set(self.elbow_iVar.get()) 
             root.Arm_state.wrist_iVar.set(self.wrist_iVar.get())
-            root.update()
+
+            root.Arm_state.send_data()
 
         except(Exception):
             error_win(self, "invalid input, input must be a number")
